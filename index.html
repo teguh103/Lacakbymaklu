@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Ban Tool</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="https://cdn.pixabay.com/video/2023/03/30/156785-817420616_tiny.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Container -->
+  <div class="container">
+    <h1 class="title glitch" data-text="WHATSAPP BAN SYSTEM">WHATSAPP BAN SYSTEM</h1>
+    <p class="subtitle">Masukkan nomor WhatsApp target yang ingin di-ban (Fake)</p>
+
+    <!-- Form Input -->
+    <form id="ban-form">
+      <input type="text" id="targetNumber" placeholder="6281234567890" required>
+      <button type="submit" class="btn">BAN SEKARANG</button>
+    </form>
+
+    <!-- Status Loading -->
+    <div id="process-status" class="hidden">
+      <p class="loading-text">Memproses Report...</p>
+      <div class="loader"></div>
+    </div>
+
+    <!-- Hasil Data -->
+    <div id="result-data" class="hidden">
+      <h2>Hasil Analisa</h2>
+      <pre id="fake-data"></pre>
+    </div>
+  </div>
+</body>
+</html>

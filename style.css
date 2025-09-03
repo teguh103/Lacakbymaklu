@@ -1,0 +1,164 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Background Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Overlay Gelap */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 2;
+  color: #00ff88;
+  text-align: center;
+  padding: 40px;
+  max-width: 650px;
+  margin: 0 auto;
+  margin-top: 10vh;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid #00ff88;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px #00ff88;
+}
+
+/* Title Glitch Effect */
+.title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.title.glitch::before,
+.title.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #00ff88;
+}
+
+.title.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitch 1s infinite linear alternate-reverse;
+}
+
+.title.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+  animation: glitch 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  50% { clip: rect(0, 9999px, 100%, 0); }
+  100% { clip: rect(0, 9999px, 0, 0); }
+}
+
+/* Subtitle */
+.subtitle {
+  margin-bottom: 20px;
+  color: #b6fcd5;
+  font-size: 14px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  background: black;
+  color: #00ff88;
+  font-size: 16px;
+  text-align: center;
+}
+
+input[type="text"]::placeholder {
+  color: #00ff88;
+  opacity: 0.6;
+}
+
+.btn {
+  padding: 12px;
+  background: #00ff88;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00cc66;
+}
+
+/* Loader */
+.loader {
+  border: 4px solid rgba(0, 255, 136, 0.3);
+  border-top: 4px solid #00ff88;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 15px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+/* Fake Data Output */
+#result-data {
+  margin-top: 20px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+#fake-data {
+  color: #00ff88;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
